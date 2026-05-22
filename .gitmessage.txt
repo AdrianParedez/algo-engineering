@@ -1,0 +1,25 @@
+# Format
+#   type(scope): subject
+#
+# Keep the subject imperative, specific, and compact.
+# Add a body for any nontrivial change. Explain mechanism and intent,
+# not just outcome.
+#
+# Core types
+#   feat, fix, docs, perf, test, ci, chore, ops, refactor
+#
+# Allowed repo-specific types when they carry stronger meaning
+#   config, init, improvement, protocol, signal, patch
+#
+# Preferred scopes for this repository
+#   repo, workspace, readme, github, lab, pointer-layout,
+#   matrix-blocking, simd-scan, docker, benchmarking, profiling, security
+#
+# Example
+#   ops(repo): prepare initial publication scaffold
+#
+# Body prompts
+#   - what changed?
+#   - why was it necessary?
+#   - what evidence or mechanism supports it?
+

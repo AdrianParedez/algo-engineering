@@ -1,0 +1,44 @@
+# perf stat
+variant=split_soa_index_chase
+rounds=32
+warmup_rounds=4
+events=cycles,instructions,cache-references,cache-misses,branches,branch-misses
+
+{
+  "variant": "split_soa_index_chase",
+  "interpretation": "contiguous allocation + integer dependency + split value/next arrays",
+  "rounds": 32,
+  "warmup_rounds": 4,
+  "elements": 524288,
+  "touch_bytes": 4194304,
+  "checksum": 0,
+  "elapsed_ns": 783389794,
+  "ns_per_round": 24480931.0625,
+  "footprint": {
+    "boxed_unique_pages": 4097,
+    "arena_unique_pages": 2049,
+    "packed_unique_pages": 2049,
+    "values_unique_pages": 1025,
+    "next_indices_unique_pages": 1025
+  }
+}
+
+ Performance counter stats for 'target/release/pointer_layout_probe --variant split_soa_index_chase --rounds 32 --warmup-rounds 4':
+
+        3589081550      cycles                                                             
+         588760319      instructions                     #    0.16  insn per cycle         
+          41978075      cache-references                                                   
+          20755825      cache-misses                     #   49.444 % of all cache refs    
+         142270194      branches                                                           
+            844005      branch-misses                    #    0.59% of all branches        
+         131972870      L1-dcache-loads                                                    
+          52809653      L1-dcache-load-misses            #   40.02% of all L1-dcache accesses
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+
+       1.131574007 seconds time elapsed
+
+       1.187852000 seconds user
+       0.039303000 seconds sys
+
+

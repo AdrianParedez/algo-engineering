@@ -1,0 +1,112 @@
+[
+  {
+    "benchmark_id": "matrix_blocking/blocked_32/n128-2097152-macs",
+    "mean_ns": 850676.9980828703,
+    "median_ns": 863623.9583333333,
+    "std_dev_ns": 94695.16128426748,
+    "lower_bound_ns": 832329.4812500799,
+    "upper_bound_ns": 869155.2836769787,
+    "work_unit_count": 2097152,
+    "work_unit_kind": "macs",
+    "throughput_per_second": 2465274134.2792277
+  },
+  {
+    "benchmark_id": "matrix_blocking/naive_ijk/n128-2097152-macs",
+    "mean_ns": 2546971.1904761894,
+    "median_ns": 2364354.761904762,
+    "std_dev_ns": 537715.7147176084,
+    "lower_bound_ns": 2450900.845238095,
+    "upper_bound_ns": 2661045.6190476185,
+    "work_unit_count": 2097152,
+    "work_unit_kind": "macs",
+    "throughput_per_second": 823390546.3249116
+  },
+  {
+    "benchmark_id": "pointer_layout/arena_pointer_chain/524288-elements-4194304-bytes",
+    "mean_ns": 28819563.0,
+    "median_ns": 26306200.0,
+    "std_dev_ns": 6879347.651487844,
+    "lower_bound_ns": 27500077.2,
+    "upper_bound_ns": 30192264.25,
+    "work_unit_count": 4194304,
+    "work_unit_kind": "bytes",
+    "throughput_per_second": 145536696.72229242
+  },
+  {
+    "benchmark_id": "pointer_layout/boxed_pointer_chain/524288-elements-4194304-bytes",
+    "mean_ns": 38254927.5,
+    "median_ns": 36723675.0,
+    "std_dev_ns": 3406384.8135150867,
+    "lower_bound_ns": 37617175.475,
+    "upper_bound_ns": 38944620.55,
+    "work_unit_count": 4194304,
+    "work_unit_kind": "bytes",
+    "throughput_per_second": 109640882.21053353
+  },
+  {
+    "benchmark_id": "pointer_layout/flat_sequential/524288-elements-4194304-bytes",
+    "mean_ns": 114170.84287105322,
+    "median_ns": 107914.79629629628,
+    "std_dev_ns": 14341.582459138232,
+    "lower_bound_ns": 111471.74884698384,
+    "upper_bound_ns": 117055.1027646971,
+    "work_unit_count": 4194304,
+    "work_unit_kind": "bytes",
+    "throughput_per_second": 36737085358.44943
+  },
+  {
+    "benchmark_id": "pointer_layout/packed_index_chase/524288-elements-4194304-bytes",
+    "mean_ns": 21588687.0,
+    "median_ns": 21040025.0,
+    "std_dev_ns": 2217649.8209966933,
+    "lower_bound_ns": 21178688.375,
+    "upper_bound_ns": 22044016.05,
+    "work_unit_count": 4194304,
+    "work_unit_kind": "bytes",
+    "throughput_per_second": 194282496.19812453
+  },
+  {
+    "benchmark_id": "pointer_layout/split_soa_index_chase/524288-elements-4194304-bytes",
+    "mean_ns": 19366346.666666668,
+    "median_ns": 17872066.666666668,
+    "std_dev_ns": 4171911.543751722,
+    "lower_bound_ns": 18616005.233333323,
+    "upper_bound_ns": 20240098.65833332,
+    "work_unit_count": 4194304,
+    "work_unit_kind": "bytes",
+    "throughput_per_second": 216576934.8340351
+  },
+  {
+    "benchmark_id": "simd_scan/compiler_vectorized_candidate/1048576-bytes",
+    "mean_ns": 455059.61939644447,
+    "median_ns": 432319.96375129,
+    "std_dev_ns": 62409.792050874275,
+    "lower_bound_ns": 443556.40908906143,
+    "upper_bound_ns": 467874.3013062152,
+    "work_unit_count": 1048576,
+    "work_unit_kind": "bytes",
+    "throughput_per_second": 2304260706.302065
+  },
+  {
+    "benchmark_id": "simd_scan/explicit_simd/1048576-bytes",
+    "mean_ns": 59137.80128179539,
+    "median_ns": 57761.40108374104,
+    "std_dev_ns": 6224.966619599699,
+    "lower_bound_ns": 57956.96079377493,
+    "upper_bound_ns": 60389.33108408949,
+    "work_unit_count": 1048576,
+    "work_unit_kind": "bytes",
+    "throughput_per_second": 17731061643.69332
+  },
+  {
+    "benchmark_id": "simd_scan/scalar_branchy/1048576-bytes",
+    "mean_ns": 450975.2774514213,
+    "median_ns": 441546.021012321,
+    "std_dev_ns": 46705.64064958401,
+    "lower_bound_ns": 442107.00402872666,
+    "upper_bound_ns": 460392.37206246686,
+    "work_unit_count": 1048576,
+    "work_unit_kind": "bytes",
+    "throughput_per_second": 2325129674.348838
+  }
+]

@@ -1,0 +1,54 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: ci
+    labels:
+      - dependencies
+      - github-actions
+    open-pull-requests-limit: 5
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+
+  - package-ecosystem: cargo
+    directory: /labs/cache-locality-lab
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: deps
+    labels:
+      - dependencies
+      - rust
+    open-pull-requests-limit: 5
+    groups:
+      cargo-patch-minor:
+        patterns:
+          - "*"
+        update-types:
+          - minor
+          - patch
+      cargo-major:
+        patterns:
+          - "*"
+        update-types:
+          - major
+
+  - package-ecosystem: docker
+    directory: /labs/cache-locality-lab
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: docker
+    labels:
+      - dependencies
+      - docker
+    open-pull-requests-limit: 3
+    groups:
+      docker-base:
+        patterns:
+          - "*"

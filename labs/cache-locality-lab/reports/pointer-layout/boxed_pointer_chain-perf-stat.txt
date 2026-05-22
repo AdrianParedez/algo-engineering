@@ -1,0 +1,44 @@
+# perf stat
+variant=boxed_pointer_chain
+rounds=32
+warmup_rounds=4
+events=cycles,instructions,cache-references,cache-misses,branches,branch-misses
+
+{
+  "variant": "boxed_pointer_chain",
+  "interpretation": "allocator scatter + pointer dependency + packed node payload",
+  "rounds": 32,
+  "warmup_rounds": 4,
+  "elements": 524288,
+  "touch_bytes": 4194304,
+  "checksum": 0,
+  "elapsed_ns": 1147481300,
+  "ns_per_round": 35858790.625,
+  "footprint": {
+    "boxed_unique_pages": 4097,
+    "arena_unique_pages": 2049,
+    "packed_unique_pages": 2049,
+    "values_unique_pages": 1025,
+    "next_indices_unique_pages": 1025
+  }
+}
+
+ Performance counter stats for 'target/release/pointer_layout_probe --variant boxed_pointer_chain --rounds 32 --warmup-rounds 4':
+
+        5666341627      cycles                                                             
+         467156248      instructions                     #    0.08  insn per cycle         
+          35487900      cache-references                                                   
+          25749961      cache-misses                     #   72.560 % of all cache refs    
+          90556697      branches                                                           
+           1133442      branch-misses                    #    1.25% of all branches        
+         132288823      L1-dcache-loads                                                    
+          53617681      L1-dcache-load-misses            #   40.53% of all L1-dcache accesses
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+
+       1.493871873 seconds time elapsed
+
+       1.580110000 seconds user
+       0.043649000 seconds sys
+
+

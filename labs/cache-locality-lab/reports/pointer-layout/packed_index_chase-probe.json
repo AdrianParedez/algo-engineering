@@ -1,0 +1,18 @@
+﻿{
+  "variant": "packed_index_chase",
+  "interpretation": "contiguous allocation + integer dependency + packed node payload",
+  "rounds": 64,
+  "warmup_rounds": 8,
+  "elements": 524288,
+  "touch_bytes": 4194304,
+  "checksum": 0,
+  "elapsed_ns": 1408310600,
+  "ns_per_round": 22004853.125,
+  "footprint": {
+    "boxed_unique_pages": 4124,
+    "arena_unique_pages": 2049,
+    "packed_unique_pages": 2049,
+    "values_unique_pages": 1025,
+    "next_indices_unique_pages": 1025
+  }
+}

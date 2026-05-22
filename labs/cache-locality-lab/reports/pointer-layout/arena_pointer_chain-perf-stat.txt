@@ -1,0 +1,44 @@
+# perf stat
+variant=arena_pointer_chain
+rounds=32
+warmup_rounds=4
+events=cycles,instructions,cache-references,cache-misses,branches,branch-misses
+
+{
+  "variant": "arena_pointer_chain",
+  "interpretation": "contiguous allocation + pointer dependency + packed node payload",
+  "rounds": 32,
+  "warmup_rounds": 4,
+  "elements": 524288,
+  "touch_bytes": 4194304,
+  "checksum": 0,
+  "elapsed_ns": 895811445,
+  "ns_per_round": 27994107.65625,
+  "footprint": {
+    "boxed_unique_pages": 4097,
+    "arena_unique_pages": 2049,
+    "packed_unique_pages": 2049,
+    "values_unique_pages": 1025,
+    "next_indices_unique_pages": 1025
+  }
+}
+
+ Performance counter stats for 'target/release/pointer_layout_probe --variant arena_pointer_chain --rounds 32 --warmup-rounds 4':
+
+        4074024971      cycles                                                             
+         466700646      instructions                     #    0.11  insn per cycle         
+          26920220      cache-references                                                   
+          16307002      cache-misses                     #   60.575 % of all cache refs    
+          90479419      branches                                                           
+            870677      branch-misses                    #    0.96% of all branches        
+         132142994      L1-dcache-loads                                                    
+          33070576      L1-dcache-load-misses            #   25.03% of all L1-dcache accesses
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+
+       1.282143270 seconds time elapsed
+
+       1.343540000 seconds user
+       0.047983000 seconds sys
+
+

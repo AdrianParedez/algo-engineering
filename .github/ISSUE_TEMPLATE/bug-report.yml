@@ -1,0 +1,38 @@
+name: Bug report
+description: Report a defect in the workspace, tooling, or benchmark lab.
+title: "[bug] "
+labels:
+  - bug
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: State the defect precisely.
+      placeholder: What is wrong, and where?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Include commands, paths, and relevant files.
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs or artifacts
+      description: Link raw outputs or attach the relevant artifact path.
+    validations:
+      required: false

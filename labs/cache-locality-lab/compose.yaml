@@ -1,0 +1,35 @@
+x-lab-base: &lab-base
+  build:
+    context: .
+    dockerfile: Dockerfile
+  image: cache-locality-lab:dev
+  working_dir: /workspace
+  stdin_open: true
+  tty: true
+  environment:
+    CARGO_TERM_COLOR: always
+    PERF_EVENTS: cycles,instructions,cache-references,cache-misses,branches,branch-misses
+  volumes:
+    - .:/workspace
+    - cargo-registry:/usr/local/cargo/registry
+    - cargo-git:/usr/local/cargo/git
+
+services:
+  lab:
+    <<: *lab-base
+
+  lab-perf:
+    <<: *lab-base
+    profiles: ["perf"]
+    cap_add:
+      - PERFMON
+      - SYS_PTRACE
+      - IPC_LOCK
+    security_opt:
+      - seccomp=unconfined
+    ulimits:
+      memlock: -1
+
+volumes:
+  cargo-registry:
+  cargo-git:

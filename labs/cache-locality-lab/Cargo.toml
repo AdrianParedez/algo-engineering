@@ -1,0 +1,21 @@
+[package]
+name = "cache-locality-lab"
+version = "0.1.0"
+edition = "2021"
+description = "Focused Rust benchmark lab for cache locality, blocking, and SIMD comparisons."
+publish = false
+
+[lib]
+bench = false
+
+[[bench]]
+name = "cache_locality"
+harness = false
+
+[dependencies]
+rand = { version = "0.8", features = ["small_rng"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[dev-dependencies]
+criterion = { version = "0.5", features = ["html_reports"] }

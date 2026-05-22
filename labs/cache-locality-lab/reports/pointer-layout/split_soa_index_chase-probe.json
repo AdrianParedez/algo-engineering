@@ -1,0 +1,18 @@
+﻿{
+  "variant": "split_soa_index_chase",
+  "interpretation": "contiguous allocation + integer dependency + split value/next arrays",
+  "rounds": 64,
+  "warmup_rounds": 8,
+  "elements": 524288,
+  "touch_bytes": 4194304,
+  "checksum": 0,
+  "elapsed_ns": 1131813600,
+  "ns_per_round": 17684587.5,
+  "footprint": {
+    "boxed_unique_pages": 4125,
+    "arena_unique_pages": 2049,
+    "packed_unique_pages": 2049,
+    "values_unique_pages": 1025,
+    "next_indices_unique_pages": 1025
+  }
+}

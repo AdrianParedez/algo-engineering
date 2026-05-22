@@ -1,0 +1,18 @@
+﻿{
+  "variant": "boxed_pointer_chain",
+  "interpretation": "allocator scatter + pointer dependency + packed node payload",
+  "rounds": 64,
+  "warmup_rounds": 8,
+  "elements": 524288,
+  "touch_bytes": 4194304,
+  "checksum": 0,
+  "elapsed_ns": 2662733300,
+  "ns_per_round": 41605207.8125,
+  "footprint": {
+    "boxed_unique_pages": 4124,
+    "arena_unique_pages": 2049,
+    "packed_unique_pages": 2049,
+    "values_unique_pages": 1025,
+    "next_indices_unique_pages": 1025
+  }
+}

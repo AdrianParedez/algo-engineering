@@ -1,0 +1,42 @@
+name: Benchmark regression
+description: Report a suspected performance regression or measurement problem.
+title: "[perf] "
+labels:
+  - performance
+body:
+  - type: input
+    id: command
+    attributes:
+      label: Command
+      description: Exact benchmark or probe command used.
+      placeholder: cargo run --release --bin pointer_layout_probe -- --variant packed_index_chase
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: CPU, OS, toolchain, allocator, and runner details.
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed result
+      description: Include timing and counters where possible.
+    validations:
+      required: true
+  - type: textarea
+    id: baseline
+    attributes:
+      label: Comparison baseline
+      description: What result are you comparing against?
+    validations:
+      required: true
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: Raw artifacts
+      description: Point to the report or artifact path. Hosted-runner timing alone is not sufficient.
+    validations:
+      required: true

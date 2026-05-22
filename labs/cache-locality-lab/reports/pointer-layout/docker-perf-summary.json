@@ -1,0 +1,139 @@
+{
+    "generated_at":  "2026-05-22T15:40:42-05:00",
+    "rounds":  32,
+    "warmup_rounds":  4,
+    "events":  [
+                   "cycles",
+                   "instructions",
+                   "cache-references",
+                   "cache-misses",
+                   "branches",
+                   "branch-misses"
+               ],
+    "variants":  [
+                     {
+                         "variant":  "boxed_pointer_chain",
+                         "interpretation":  "allocator scatter + pointer dependency + packed node payload",
+                         "ns_per_round":  35858790.625,
+                         "elapsed_ns":  1147481300,
+                         "rounds":  32,
+                         "warmup_rounds":  4,
+                         "touch_bytes":  4194304,
+                         "elements":  524288,
+                         "footprint":  {
+                                           "boxed_unique_pages":  4097,
+                                           "arena_unique_pages":  2049,
+                                           "packed_unique_pages":  2049,
+                                           "values_unique_pages":  1025,
+                                           "next_indices_unique_pages":  1025
+                                       },
+                         "counters":  {
+                                          "cycles":  5666341627,
+                                          "instructions":  467156248,
+                                          "ipc":  0.08,
+                                          "cache_references":  35487900,
+                                          "cache_misses":  25749961,
+                                          "cache_miss_pct":  72.56,
+                                          "branches":  90556697,
+                                          "branch_misses":  1133442,
+                                          "branch_miss_pct":  1.25,
+                                          "l1d_loads":  132288823,
+                                          "l1d_load_misses":  53617681,
+                                          "l1d_miss_pct":  40.53
+                                      }
+                     },
+                     {
+                         "variant":  "arena_pointer_chain",
+                         "interpretation":  "contiguous allocation + pointer dependency + packed node payload",
+                         "ns_per_round":  27994107.65625,
+                         "elapsed_ns":  895811445,
+                         "rounds":  32,
+                         "warmup_rounds":  4,
+                         "touch_bytes":  4194304,
+                         "elements":  524288,
+                         "footprint":  {
+                                           "boxed_unique_pages":  4097,
+                                           "arena_unique_pages":  2049,
+                                           "packed_unique_pages":  2049,
+                                           "values_unique_pages":  1025,
+                                           "next_indices_unique_pages":  1025
+                                       },
+                         "counters":  {
+                                          "cycles":  4074024971,
+                                          "instructions":  466700646,
+                                          "ipc":  0.11,
+                                          "cache_references":  26920220,
+                                          "cache_misses":  16307002,
+                                          "cache_miss_pct":  60.575,
+                                          "branches":  90479419,
+                                          "branch_misses":  870677,
+                                          "branch_miss_pct":  0.96,
+                                          "l1d_loads":  132142994,
+                                          "l1d_load_misses":  33070576,
+                                          "l1d_miss_pct":  25.03
+                                      }
+                     },
+                     {
+                         "variant":  "packed_index_chase",
+                         "interpretation":  "contiguous allocation + integer dependency + packed node payload",
+                         "ns_per_round":  22116042.3125,
+                         "elapsed_ns":  707713354,
+                         "rounds":  32,
+                         "warmup_rounds":  4,
+                         "touch_bytes":  4194304,
+                         "elements":  524288,
+                         "footprint":  {
+                                           "boxed_unique_pages":  4097,
+                                           "arena_unique_pages":  2049,
+                                           "packed_unique_pages":  2049,
+                                           "values_unique_pages":  1025,
+                                           "next_indices_unique_pages":  1025
+                                       },
+                         "counters":  {
+                                          "cycles":  3670603836,
+                                          "instructions":  589201579,
+                                          "ipc":  0.16,
+                                          "cache_references":  27796931,
+                                          "cache_misses":  13276221,
+                                          "cache_miss_pct":  47.761,
+                                          "branches":  123466860,
+                                          "branch_misses":  812088,
+                                          "branch_miss_pct":  0.66,
+                                          "l1d_loads":  132071203,
+                                          "l1d_load_misses":  33904589,
+                                          "l1d_miss_pct":  25.67
+                                      }
+                     },
+                     {
+                         "variant":  "split_soa_index_chase",
+                         "interpretation":  "contiguous allocation + integer dependency + split value/next arrays",
+                         "ns_per_round":  24480931.0625,
+                         "elapsed_ns":  783389794,
+                         "rounds":  32,
+                         "warmup_rounds":  4,
+                         "touch_bytes":  4194304,
+                         "elements":  524288,
+                         "footprint":  {
+                                           "boxed_unique_pages":  4097,
+                                           "arena_unique_pages":  2049,
+                                           "packed_unique_pages":  2049,
+                                           "values_unique_pages":  1025,
+                                           "next_indices_unique_pages":  1025
+                                       },
+                         "counters":  {
+                                          "cycles":  3589081550,
+                                          "instructions":  588760319,
+                                          "ipc":  0.16,
+                                          "cache_references":  41978075,
+                                          "cache_misses":  20755825,
+                                          "cache_miss_pct":  49.444,
+                                          "branches":  142270194,
+                                          "branch_misses":  844005,
+                                          "branch_miss_pct":  0.59,
+                                          "l1d_loads":  131972870,
+                                          "l1d_load_misses":  52809653,
+                                          "l1d_miss_pct":  40.02
+                                      }
+                     }
+                 ]
+}

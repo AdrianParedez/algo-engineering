@@ -1,0 +1,6 @@
+# Copy this file to .github/CODEOWNERS and replace every placeholder before
+# enabling required Code Owner reviews in GitHub.
+
+* @REPLACE_WITH_OWNER
+/.github/ @REPLACE_WITH_OWNER
+/labs/cache-locality-lab/ @REPLACE_WITH_OWNER

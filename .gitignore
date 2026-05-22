@@ -1,0 +1,35 @@
+# Operating system noise
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor state
+.idea/
+.vscode/
+
+# Python cache
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Rust and benchmark build outputs
+**/target/
+
+# Local-only Windows PMC trace artifacts
+labs/cache-locality-lab/reports/pointer-layout/*.etl
+labs/cache-locality-lab/reports/pointer-layout/*-pmc*.txt
+labs/cache-locality-lab/reports/pointer-layout/*-profile.txt
+
+# Logs and local scratch space
+*.log
+tmp/
+tmp-*/
+
+# Local environment files
+.env
+.env.*
+!.env.example

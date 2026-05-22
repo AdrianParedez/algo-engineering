@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If this workspace or its benchmark lab informs your work, cite it using these metadata."
+title: "Algorithm Engineering Workspace"
+type: software
+authors:
+  - name: "Algorithm Engineering Workspace maintainers"
+version: 0.1.0
+date-released: 2026-05-22
+abstract: "Documentation-first algorithm engineering knowledge system with a Rust benchmark lab for cache locality, blocking, SIMD, and profiling workflows."
+keywords:
+  - algorithm engineering
+  - benchmarking
+  - performance engineering
+  - rust
+  - systems

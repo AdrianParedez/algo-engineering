@@ -1,0 +1,44 @@
+# perf stat
+variant=packed_index_chase
+rounds=32
+warmup_rounds=4
+events=cycles,instructions,cache-references,cache-misses,branches,branch-misses
+
+{
+  "variant": "packed_index_chase",
+  "interpretation": "contiguous allocation + integer dependency + packed node payload",
+  "rounds": 32,
+  "warmup_rounds": 4,
+  "elements": 524288,
+  "touch_bytes": 4194304,
+  "checksum": 0,
+  "elapsed_ns": 707713354,
+  "ns_per_round": 22116042.3125,
+  "footprint": {
+    "boxed_unique_pages": 4097,
+    "arena_unique_pages": 2049,
+    "packed_unique_pages": 2049,
+    "values_unique_pages": 1025,
+    "next_indices_unique_pages": 1025
+  }
+}
+
+ Performance counter stats for 'target/release/pointer_layout_probe --variant packed_index_chase --rounds 32 --warmup-rounds 4':
+
+        3670603836      cycles                                                             
+         589201579      instructions                     #    0.16  insn per cycle         
+          27796931      cache-references                                                   
+          13276221      cache-misses                     #   47.761 % of all cache refs    
+         123466860      branches                                                           
+            812088      branch-misses                    #    0.66% of all branches        
+         132071203      L1-dcache-loads                                                    
+          33904589      L1-dcache-load-misses            #   25.67% of all L1-dcache accesses
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+
+       0.986759555 seconds time elapsed
+
+       1.037776000 seconds user
+       0.030522000 seconds sys
+
+

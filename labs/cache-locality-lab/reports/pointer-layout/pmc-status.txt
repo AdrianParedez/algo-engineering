@@ -1,0 +1,22 @@
+Pointer-layout PMC capture status: partially unblocked after rerunning in an elevated shell, but still not usable for analysis on this host.
+
+Observed state on 2026-05-22 after elevation:
+- The active Windows shell is elevated. `net session` succeeds.
+- Windows Performance Toolkit is installed (`xperf.exe` present).
+- The pointer-layout PMC wrapper can now start and merge ETL traces.
+- However, `xperf -a profile` reports `There is no sampled profile data in the trace`, and `xperf -a pmc` emits only the header row for `PmcInterrupt`.
+
+Verified likely blocker:
+- `systeminfo` reports `Virtualization-based security: Status: Running`.
+- `systeminfo` also reports `A hypervisor has been detected`.
+- `Win32_ComputerSystem.HypervisorPresent` is `True`.
+- This matches external guidance that Hyper-V / VBS can block or degrade access to PMC / PMU data for Xperf and Tracelog.
+
+Additional environment limits:
+- The configured WSL2 Ubuntu instance does not have Linux `perf`, `cargo`, or `rustc` installed.
+- `sudo` is present in WSL but requires an interactive password, so Linux perf installation could not be completed non-interactively from Codex.
+- Docker Desktop with the lab's `lab-perf` profile does produce usable Linux `perf stat` counters on this host. That is now the preferred local counter path for this workspace.
+
+Prepared rerun paths:
+- Windows: run `powershell -ExecutionPolicy Bypass -File .\scripts\profile-pointer-layout.ps1 -EnableWindowsPmc` after disabling Hyper-V / VBS if policy allows, then reboot.
+- Linux: use `powershell -ExecutionPolicy Bypass -File .\scripts\run-docker-perf.ps1 -Variant split_soa_index_chase` for the validated containerized path, or use a bare-metal Linux environment for broader event support.
