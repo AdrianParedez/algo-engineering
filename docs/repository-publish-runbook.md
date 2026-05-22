@@ -97,6 +97,7 @@ After the remote exists, confirm:
 
 1. `Repository CI` completes on `main`.
 2. Dependabot opens update PRs in the expected directories.
+   Cargo updates should be patch/minor only unless the maintainers intentionally re-enable semver-major automation.
 3. CodeQL uploads results if the repository plan supports it.
 4. Issue forms and PR templates render correctly.
 5. `CITATION.cff` is recognized by GitHub.

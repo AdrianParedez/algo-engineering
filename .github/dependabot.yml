@@ -25,6 +25,10 @@ updates:
       - dependencies
       - rust
     open-pull-requests-limit: 5
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - version-update:semver-major
     groups:
       cargo-patch-minor:
         patterns:
@@ -32,11 +36,6 @@ updates:
         update-types:
           - minor
           - patch
-      cargo-major:
-        patterns:
-          - "*"
-        update-types:
-          - major
 
   - package-ecosystem: docker
     directory: /labs/cache-locality-lab

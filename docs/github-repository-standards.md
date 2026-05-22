@@ -42,7 +42,7 @@ Dependabot is configured for:
 - GitHub Actions workflows
 - the lab Dockerfile
 
-Updates are grouped to reduce PR noise and review fragmentation.
+Updates are grouped to reduce PR noise and review fragmentation. Cargo automation is intentionally limited to patch and minor updates; semver-major Rust dependency changes stay manual because they can require API migration, benchmark reinterpretation, and toolchain-policy review rather than a blind merge.
 
 ### 5. Repository naming and licensing stay simple
 
