@@ -26,7 +26,6 @@ Recommended repository name: `algo-engineering`
 
 ## Optional Pre-Publish Hardening
 
-- Replace `.github/CODEOWNERS.template` with a real `.github/CODEOWNERS` file if you want Code Owner review policy.
 - Enable a ruleset for `main` after the first successful CI run.
 
 ## Create The Repository
@@ -78,7 +77,7 @@ Use these required status checks after the first successful workflow runs:
 - `cache-locality-rust-ci-windows`
 - `codeql-analyze` when CodeQL is enabled for the repository
 
-Only enable “require review from Code Owners” after a real `.github/CODEOWNERS` file is in place.
+`CODEOWNERS` is now configured. Only enable “require review from Code Owners” after you confirm the owner mapping is the one you want.
 
 ## Repository Features
 
