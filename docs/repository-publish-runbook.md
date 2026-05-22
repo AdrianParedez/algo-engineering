@@ -4,7 +4,7 @@ Last verified: 2026-05-22
 
 ## Purpose
 
-This runbook covers the remaining steps after local preparation and before or immediately after creating the GitHub remote.
+This runbook records the publication sequence for this repository and the current post-publication baseline.
 
 ## Local State Already Prepared
 
@@ -17,16 +17,27 @@ This runbook covers the remaining steps after local preparation and before or im
 - Dependabot for Cargo, GitHub Actions, and Docker
 - repository validation script
 
-## Blockers To Resolve Before Public Publication
+## Current Public State
 
 Recommended repository name: `algo-engineering`
 
-1. Enable GitHub private vulnerability reporting immediately after repo creation, or add an explicit maintainer security contact to `SECURITY.md`.
-2. Decide whether the repository will be public or private.
+- Repository visibility: public
+- Private vulnerability reporting: enabled
+- Secret scanning: enabled
+- Secret scanning push protection: enabled
+- Dependabot alerts: enabled
+- Dependabot security updates: enabled
+- `main` ruleset: active
+  - pull requests required
+  - 1 approving review required
+  - required checks: `workspace-docs-integrity`, `cache-locality-rust-ci-linux`, `cache-locality-rust-ci-windows`, `codeql-analyze`
 
-## Optional Pre-Publish Hardening
+## Optional Post-Publish Hardening
 
-- Enable a ruleset for `main` after the first successful CI run.
+- Add repository topics so GitHub classification and discovery are less generic.
+- Add a homepage URL if you later publish a standalone docs site, paper page, or project landing page.
+- Decide whether to enable Discussions for community Q&A or keep Issues-only triage.
+- Add an explicit off-platform security contact if you want a fallback beyond GitHub advisory intake.
 
 ## Create The Repository
 
@@ -52,23 +63,22 @@ Use the repository commit template for the first commit. Recommended subject:
 ops(repo): prepare initial publication scaffold
 ```
 
-## GitHub-Side Settings To Enable
+## GitHub-Side Settings Baseline
 
-### Recommended Immediately
+### Enabled
 
 - Dependabot alerts
 - Dependabot security updates
-- Secret scanning, if your plan supports it
+- Secret scanning
 - Private vulnerability reporting
-- Code scanning with the included CodeQL workflow, if your repository visibility and plan support it
+- Code scanning through the included CodeQL workflow
 
 ### Recommended Ruleset For `main`
 
-- require pull requests
 - require status checks before merge
-- require linear history
-- block force pushes
-- block branch deletion
+- require pull requests
+- require 1 approving review
+- optionally add linear-history, force-push, and branch-deletion restrictions if you want a stricter merge policy later
 
 Use these required status checks after the first successful workflow runs:
 
@@ -93,12 +103,12 @@ Use these required status checks after the first successful workflow runs:
 
 ## First Post-Publish Verification
 
-After the remote exists, confirm:
+Completed baseline checks for the public repository should include:
 
 1. `Repository CI` completes on `main`.
 2. Dependabot opens update PRs in the expected directories.
    Cargo updates should be patch/minor only unless the maintainers intentionally re-enable semver-major automation.
-3. CodeQL uploads results if the repository plan supports it.
+3. CodeQL uploads results successfully.
 4. Issue forms and PR templates render correctly.
 5. `CITATION.cff` is recognized by GitHub.
 

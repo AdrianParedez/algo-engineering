@@ -9,8 +9,8 @@ Benchmark artifacts and research notes are part of the repository history, but t
 ## Reporting
 
 - Do not open a public issue for a suspected vulnerability.
-- After the GitHub repository is created, enable GitHub private vulnerability reporting and use it as the primary intake path.
-- Until private vulnerability reporting is enabled, report security issues through the private maintainer channel already used for this workspace.
+- GitHub private vulnerability reporting is enabled for this public repository and is the primary intake path.
+- If GitHub advisory intake is unavailable, report security issues through the private maintainer channel already used for this workspace.
 
 ## Response Targets
 
@@ -18,6 +18,8 @@ Benchmark artifacts and research notes are part of the repository history, but t
 - Containment decision: within 10 business days after reproduction
 - Public disclosure: after a fix or mitigation path exists
 
-## Publication Blocker
+## Repository State
 
-Do not make this repository public until GitHub private vulnerability reporting has been enabled or an explicit maintainer security contact has been added to this file.
+- Repository visibility: public
+- Private vulnerability reporting: enabled
+- Public issue reports are not an acceptable path for undisclosed vulnerabilities

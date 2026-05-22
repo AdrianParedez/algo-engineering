@@ -4,7 +4,7 @@ Last verified: 2026-05-22
 
 ## Purpose
 
-This note records the GitHub and engineering-repository practices applied while preparing this workspace for publication.
+This note records the GitHub and engineering-repository practices applied to this public workspace.
 
 ## Applied Standards
 
@@ -57,14 +57,15 @@ This keeps the public name short enough for normal use while still legible to an
 
 GitHub-hosted runners are useful for build correctness and smoke checks, not for final performance claims. This repository therefore avoids CI rules that would infer benchmark regressions from hosted-runner timing noise.
 
-### 7. Publication blockers stay explicit
+### 7. Publication state stays explicit
 
-The following items are intentionally left as pre-publication decisions rather than guessed locally:
+The repository is now public. The current baseline includes:
 
-- final security contact path
-- GitHub-side rulesets, alerts, and vulnerability-reporting toggles
+- private vulnerability reporting enabled
+- secret scanning and push protection enabled
+- a `main` ruleset that requires pull requests, one approving review, and the four repository CI/CodeQL checks
 
-Those are tracked in `docs/repository-publish-runbook.md`.
+Remaining optional metadata decisions such as repository topics, homepage URL, and an explicit fallback security contact remain tracked in `docs/repository-publish-runbook.md`.
 
 ## Source Notes
 
